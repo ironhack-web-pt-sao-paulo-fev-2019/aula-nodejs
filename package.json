@@ -1,0 +1,26 @@
+{
+  "name": "aula-nodejs",
+  "version": "1.0.0",
+  "description": "Meu primeiro projeto em node.js na IronHack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "npm test && ls -ls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ironhack-web-pt-sao-paulo-fev-2019/aula-nodejs.git"
+  },
+  "keywords": [
+    "aula",
+    "nodejs",
+    "ironhack",
+    "coe"
+  ],
+  "author": "José Luiz Coe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ironhack-web-pt-sao-paulo-fev-2019/aula-nodejs/issues"
+  },
+  "homepage": "https://github.com/ironhack-web-pt-sao-paulo-fev-2019/aula-nodejs#readme"
+}
