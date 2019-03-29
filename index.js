@@ -8,6 +8,10 @@ const server =
       response.write('Hello, world!');
       response.end();
     }
+    else if (request.url === '/about') {
+      response.write('My name is Izzy');
+      response.end();
+    }
     else {
       response.statusCode = 404;
       response.write('404 Page');
