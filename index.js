@@ -8,16 +8,29 @@ app.use(express.static('public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'hbs');
 
-// // sendFile - envia arquivo
-// app.get('/home', (request, response) => {
-//   response.sendFile(`${__dirname}/views/home.html`)
-// });
-
 //add render do hbs
 app.get('/home', (request, response) => {
-  response.render('home');
+  let data = {
+    name: 'Ke',
+    age: 20,
+    cities: [
+      {
+          name: "Miami",
+          friends: 150,
+          special: true
+      }, 
+      { 
+          name: "Madrid",
+          friends: 185000
+      },
+      { 
+          name: "Barcelona",
+          friends: 1500
+      }
+    ]
+  };  
+  response.render('home', data);
 });
-
 
 // send - envia texto
 app.post('/', (request, response) => {
