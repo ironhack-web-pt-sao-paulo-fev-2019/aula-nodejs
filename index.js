@@ -1,9 +1,14 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req,resp) => {
-    console.log('No console!')
-    resp.send('Calma Sany!')
+app.get('/home', (req,resp) => {
+    resp.send(`<form action="/" method="post">
+        <button type="submit">POSTAR</button>
+    </form>`)
+});
+
+app.post('/', (req,resp) => {
+    resp.send('Aqui é um POST!')
 });
 
 app.listen(3000);
