@@ -1,8 +1,18 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (request, response) => {
-    response.send(`Calma Sany!`)
+app.use(express.static('public'));
+
+app.get('/home', (request, response) => {
+    response.send(`
+        <form action="/" method="post">
+            <button type="submit">Postar dados</button>
+        </form>
+    `)
+});
+
+app.post('/', (request, response) => {
+    response.send(`Recebi uma requisição via POST!`)
 });
 
 app.listen(3000);
