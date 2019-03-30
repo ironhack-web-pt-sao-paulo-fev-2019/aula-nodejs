@@ -4,18 +4,7 @@ const app = express ();
 app.use(express.static('public'));
 
 app.get('/home', (request, response) => {
-    response.send(`
-        <html>
-            <head>
-                <link rel="stylesheet" href="/css/styles.css" />
-            </head>
-            <body>
-                <form action="/" method="post">
-                    <button type="submit">Postar dados</button>
-                </form>
-            </body>
-        </html>
-    `)  
+    response.sendFile(`${__dirname}/views/home.html`); //colocar ${__dirname} e nao './' para falar para o browser pegar a raiz no computador
 });
 
 app.post('/', (request, response) => {
