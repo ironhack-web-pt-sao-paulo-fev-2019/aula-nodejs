@@ -1,11 +1,7 @@
 const express = require('express');
 const app = express();
 
-// get requisita e retorna pagina, nao retorna o post
-// app.get('/home', (request, response) => {
-//   response.send(`Recebi uma requisiçao via GET!`)
-// })
-
+app.use(express.static('public'));
 
 //get requisita e retorna pagina - para aparecer o retorno do post
 app.get('/home', (request, response) => {
