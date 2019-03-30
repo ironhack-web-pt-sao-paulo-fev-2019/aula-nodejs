@@ -1,15 +1,12 @@
 const express = require('express');
 const app = express();
-
+//raiz para objetos estaticos(css,js,imagens...)
 app.use(express.static('public'));
-
+//estou enviando um arquivom para o browser
 app.get('/home', (request, response) => {
-  response.send(`
-  <form action="/" method="post">
-            <button type="submit">Postar dados</button>
-        </form> `)
+  response.sendFile(`${__dirname}/views/home.html`)
 });
-
+//ele esta mandando um texto, apenas
 app.post('/', (request, response) => {
   response.send(`Recebi uma requisição via POST`)
 });
