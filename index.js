@@ -1,16 +1,34 @@
-
 const express = require('express');
 const app = express();
 
+app.use(express.static('public'));
 
-app.use(express.static('public'))
-
-app.set('views',__dirname + '/views');
-app.set('view engine','hbs');
-
+// Hbs
+app.set('views', __dirname + '/views');
+app.set('view engine', 'hbs');
 
 app.get('/home', (request, response) => {
-    response.render('home')
+    let data = {  
+        name: 'José',
+        age: 18,
+        cities: [
+            {
+                name: "Miami",
+                friends: 150,
+                special: true
+            }, 
+            { 
+                name: "Madrid",
+                friends: 185000
+            },
+            { 
+                name: "Barcelona",
+                friends: 1500
+            }
+        ]
+    }
+
+    response.render('home', data);
 });
 
 app.post('/', (request, response) => {
@@ -18,5 +36,3 @@ app.post('/', (request, response) => {
 });
 
 app.listen(3000);
- 
-

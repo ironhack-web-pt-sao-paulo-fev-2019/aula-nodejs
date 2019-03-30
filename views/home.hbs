@@ -1,11 +1,18 @@
 <html>
-<head>
-    <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
-    <form action="/" method="post">
-        Nome: <input name="text" value=""/>
-        <button type="submit">Postar dados</button>
-    </form>
-</body>
+    <head>
+        <link rel="stylesheet" href="/css/styles.css" />
+    </head>
+    <body>
+        <form action="/" method="post">
+            <h1>{{ name }}, {{ age }} anos</h1>
+            Nome: <input name="name" placeholder="{{ name }}" />
+            <button type="submit">Postar dados</button>
+        </form>
+
+        <ul>
+        {{#each cities}}
+            <li>{{ this.name }}, {{ this.friends }} amigos</li>
+        {{/each}}
+        </ul>
+    </body>
 </html>
