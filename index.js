@@ -3,12 +3,9 @@ const app = express();
 
 app.use(express.static('public'));
 
+
 app.get('/home', (request, response) => {
-    response.send(`
-        <form action="/" method="post">
-            <button type="submit">Postar dados</button>
-        </form>
-    `)
+    response.sendFile(`${__dirname}/views/home.html`);
 });
 
 app.post('/', (request, response) => {
