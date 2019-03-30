@@ -1,5 +1,5 @@
 {
-  "name": "aula-nodejs",
+  "name": "pwd",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/ironhack-web-pt-sao-paulo-fev-2019/aula-nodejs#readme",
   "dependencies": {
-    "express": "^4.16.4"
-  }
+    "express": "^4.16.4",
+    "hbs": "^4.0.3"
+  },
+  "devDependencies": {}
 }
