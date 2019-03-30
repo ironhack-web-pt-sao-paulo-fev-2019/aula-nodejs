@@ -5,8 +5,12 @@ const app = express();
 
 app.use(express.static('public'))
 
+app.set('views',__dirname + '/views');
+app.set('view engine','hbs');
+
+
 app.get('/home', (request, response) => {
-    response.sendFile(`${__dirname}/views/home.html`)
+    response.render('home')
 });
 
 app.post('/', (request, response) => {
