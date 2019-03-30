@@ -1,18 +1,8 @@
-const http = require('http');
+const express = require('express');
+const app = express();
 
-const server =
-  http.createServer((request, response) => {
-    console.log(`Someone has requested ${request.url}`);
+app.get('/', (request, response) => {
+    response.send(`Calma Sany!`)
+});
 
-    if (request.url === '/') {
-      response.write('Hello, world!');
-      response.end();
-    }
-    else {
-      response.statusCode = 404;
-      response.write('404 Page');
-      response.end();
-    }
-  });
-
-server.listen(3000);
+app.listen(3000);
